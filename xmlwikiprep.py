@@ -30,14 +30,9 @@ def read(f):
             doc["categories"] = [int(i) for i in string.split("".join(elem.itertext()))]
         elif elem.tag == "page":
             doc["_id"] = int(elem.get("id"))
-            yield doc
             cnt += 1
-            title = None
-            text = None
-            id = None
-            links = []
-            categories = []
-            external_links = []
+            yield doc
+            doc = {}
 
             # Free the memory of the building tree
             elem.clear()
