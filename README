@@ -1,0 +1,16 @@
+wikiprep-postprocess
+--------------------
+
+SETUP:
+    # Download a wikidump
+    wget http://download.wikimedia.org/enwiki/20110526/enwiki-20110526-pages-articles.xml.bz2
+    # Install wikiprep
+    git clone http://code.zemanta.com/tsolc/git/wikiprep wikiprep-zemanta.git
+    # ...
+
+    # Run wikiprep
+    wikiprep -format composite -compress -f enwiki-20110526-pages-articles.xml.bz2
+
+USAGE:
+        ./fastText.py /mnt/tmp/wikipedia/enwiki-20101011-pages-articles.gum.xml.*.gz &
+
