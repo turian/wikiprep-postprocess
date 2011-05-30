@@ -1,6 +1,14 @@
 wikiprep-postprocess
 --------------------
 
+written by Joseph Turian
+copyright (C) 2011, MetaOptimize LLC
+released under the BSD license
+
+Postprocess XML output from wikiprep (Wikipedia preprocessor) into one
+JSON element per line (suitable for mongoimport).
+This uses cElementTree.
+
 SETUP:
     # Download a wikidump
     wget http://download.wikimedia.org/enwiki/20110526/enwiki-20110526-pages-articles.xml.bz2
@@ -12,5 +20,8 @@ SETUP:
     wikiprep -format composite -compress -f enwiki-20110526-pages-articles.xml.bz2
 
 USAGE:
-        ./fastText.py /mnt/tmp/wikipedia/enwiki-20101011-pages-articles.gum.xml.*.gz &
+    ./wikiprep-to-json.py enwiki-20110526-pages-articles.gum.xml.*.gz > enwiki-20110526-pages-articles.json
 
+REQUIREMENTS:
+    My Python common library:
+        http://github.com/turian/common/
