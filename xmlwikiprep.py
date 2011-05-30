@@ -9,6 +9,8 @@ def read(f):
     """
     Generator for reading a wikiprep XML file from a file object.
     """
+    print >> sys.stderr, "Reading %s..." % f
+    print >> sys.stderr, stats()
     doc = {}
     cnt = 0
     for event, elem in cElementTree.iterparse(f):
@@ -42,6 +44,5 @@ def read(f):
             if cnt % 1000 == 0:
                 print >> sys.stderr, "Read %d articles from %s" % (cnt, f)
                 print >> sys.stderr, stats()
-                break
     print >> sys.stderr, "...done reading %s" % f
     print >> sys.stderr, stats()
